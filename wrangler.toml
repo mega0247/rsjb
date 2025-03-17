@@ -2,8 +2,8 @@ name = "redirect-worker"
 account_id = "cc52209c791ecf1ea0434bd5e3ddbbda"
 workers_dev = true
 compatibility_date = "2025-03-17"
-main = "src/worker.js"  # Entry point to your worker script
+main = "src/worker.js"  # Make sure this points to the correct worker script in the 'src' folder
 
-# Uncomment and set the route if deploying to a specific route
-route = "yourdomain.com/*"
-zone_id = "4d9495e481e17d4f7e1b6778f02cbdf8"
+# Uncomment and set if deploying to a specific route
+route = "yourdomain.com/*"  # Change to your specific route or domain
+zone_id = "4d9495e481e17d4f7e1b6778f02cbdf8"  # Your Cloudflare Zone ID
