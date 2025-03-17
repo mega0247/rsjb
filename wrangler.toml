@@ -13,4 +13,4 @@ compatibility_date = "2025-03-17"
 
 [[env.production.kv_namespaces]]
 binding = "MY_KV_NAMESPACE"  # Optional if you're using KV storage
-id = "your-kv-id"  # Replace with your actual KV Namespace ID if needed
+id = "your-kv-id"  # Replace with your actual KV Namespace ID if you're using KV storage
