@@ -12,11 +12,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Cloudflare Wrangler
-        run: |
-          npm install -g wrangler
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Adjust if needed
+
+      - name: Install Wrangler CLI
+        run: npm install -g wrangler
+
+      - name: Configure Wrangler with Cloudflare API Key
+        run: echo ${{ secrets.CLOUDFLARE_API_KEY }} > ~/.wrangler/config.toml
 
       - name: Deploy to Cloudflare Worker
-        run: |
-          wrangler login --api-key ${{ secrets.CLOUDFLARE_API_KEY }}
-          wrangler publish
+        run: wrangler publish --env production
