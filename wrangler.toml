@@ -1,4 +1,4 @@
-name = "redirect-worker"
+name = "url-generator-worker"
 account_id = "cc52209c791ecf1ea0434bd5e3ddbbda"
 workers_dev = true
 compatibility_date = "2025-03-17"
