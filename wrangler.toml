@@ -1,0 +1,7 @@
+name = "url-generator-worker"
+type = "javascript"
+
+account_id = "YOUR_CLOUDFLARE_ACCOUNT_ID"
+workers_dev = true  # Change to false if using a custom domain
+route = "https://*.eowsubluf.cfd/*"  # Adjust to your domain
+zone_id = "YOUR_CLOUDFLARE_ZONE_ID"
