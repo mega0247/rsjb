@@ -1,12 +1,17 @@
-name = "your-worker-name"
-type = "javascript"
+name = "your-worker-name"  # Replace with your Cloudflare Worker name
+type = "javascript"  # Ensure this is set correctly
 
-account_id = "cc52209c791ecf1ea0434bd5e3ddbbda"
-workers_dev = true  # Change to false if using a custom domain
-route = "https://*.eowsubluf.cfd/*"
-zone_id = "4d9495e481e17d4f7e1b6778f02cbdf8"
+# Your Cloudflare Account ID
+account_id = "cc52209c791ecf1ea0434bd5e3ddbbda"  
 
-[env.production]
-account_id = "cc52209c791ecf1ea0434bd5e3ddbbda"
-workers_dev = true
+# Set to false if using a custom domain
+workers_dev = true  
+
+# Your Cloudflare Worker route or custom domain
+route = "https://*.eowsubluf.cfd/*"  
+
+# Your Cloudflare Zone ID
+zone_id = "4d9495e481e17d4f7e1b6778f02cbdf8"  
+
+# Compatibility date (ensure this is updated to the correct date)
 compatibility_date = "2025-03-17"
