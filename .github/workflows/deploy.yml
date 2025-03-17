@@ -1,22 +1,28 @@
-name: Deploy to Cloudflare Worker
+name: Deploy to Cloudflare Workers
 
 on:
   push:
     branches:
-      - main  # Make sure this is set to the branch you're pushing to
+      - main  # Trigger this action when code is pushed to the 'main' branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    
+    - name: Install Wrangler CLI
+      run: npm install -g wrangler
+    
+    - name: Deploy to Cloudflare Workers
+      run: wrangler publish --env production
+      env:
+        CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}  # Make sure your API token is stored in GitHub secrets
 
-      - name: Set up Cloudflare Wrangler
-        run: |
-          npm install -g wrangler
-
-      - name: Deploy to Cloudflare Worker
-        run: |
-          wrangler login --api-key ${{ secrets.CLOUDFLARE_API_KEY }}
-          wrangler publish
