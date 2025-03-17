@@ -4,7 +4,7 @@ workers_dev = true
 compatibility_date = "2025-03-17"
 main = "src/worker.js"  # Entry point to your worker script
 
-# Uncomment the line below if deploying to a specific route
-# route = "yourdomain.com/*"  # Replace with your specific route or domain
+# Uncomment and set if deploying to a specific route
+# route = "yourdomain.com/*"  # Remove "#" and set to your specific route or domain
 
 zone_id = "4d9495e481e17d4f7e1b6778f02cbdf8"  # Your Cloudflare Zone ID
