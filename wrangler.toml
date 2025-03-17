@@ -1,16 +1,10 @@
 name = "your-worker-name"
 type = "javascript"
 
-account_id = "73fbc8b192d36f3dc0ef613122fddfe705b81"  # Replace with your actual Account ID
-workers_dev = true  # Change to false if using a custom domain
-route = "https://*.eowsubluf.cfd/*"  # Adjust to your domain
-zone_id = "YOUR_CLOUDFLARE_ZONE_ID"  # Replace with your Zone ID
-
-[env.production]
-account_id = "73fbc8b192d36f3dc0ef613122fddfe705b81"
+account_id = "your-account-id"
 workers_dev = true
 compatibility_date = "2025-03-17"
 
-[[env.production.kv_namespaces]]
-binding = "MY_KV_NAMESPACE"  # Optional, for KV storage (if you're using it)
-id = "your-kv-id"  # Replace with your actual KV ID
+[env.production]
+zone_id = "your-zone-id"
+route = "your-cloudflare-worker-route"
