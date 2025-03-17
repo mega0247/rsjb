@@ -3,26 +3,26 @@ name: Deploy to Cloudflare Workers
 on:
   push:
     branches:
-      - main  # Trigger this action when code is pushed to the 'main' branch
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-    
-    - name: Install Wrangler CLI
-      run: npm install -g wrangler
-    
-    - name: Deploy to Cloudflare Workers
-      run: wrangler publish --env production
-      env:
-        CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}  # Make sure your API token is stored in GitHub secrets
 
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Deploy to Cloudflare Workers
+        run: npx wrangler deploy
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}  # Cloudflare API token
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}  # Should match cc52209c791ecf1ea0434bd5e3ddbbda

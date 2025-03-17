@@ -1,19 +1,12 @@
 {
-    "name": "url-redirector",
-    "version": "1.0.0",
-    "description": "A simple URL redirector application",
-    "main": "app.js", 
-    "scripts": {
-      "start": "node app.js", 
-      "dev": "nodemon app.js"
-    },
-    "dependencies": {
-      "express": "^4.17.1"
-    },
-    "devDependencies": {
-      "nodemon": "^2.0.7"
-    },
-    "author": "Your Name",
-    "license": "MIT"
+  "name": "redirect-worker",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker for Random URL Redirection",
+  "main": "src/worker.js",
+  "scripts": {
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "wrangler": "^4.0.0"
   }
-  
+}
