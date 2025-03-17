@@ -1,5 +1,5 @@
 name = "redirect-worker"
 account_id = "your-cloudflare-account-id"
 workers_dev = true
-compatibility_date = "2024-03-17"
+compatibility_date = "2025-03-17"
 main = "worker.js"  # Make sure this file exists in your project root
