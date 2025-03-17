@@ -4,5 +4,4 @@ workers_dev = true
 route = "https://*.eowsubluf.cfd/*"
 compatibility_date = "2025-03-10"
 
-# Specify the correct path to the worker script in the src folder
-main = "src/worker.js"
+main = "src/worker.js"  # Make sure this path is correct
