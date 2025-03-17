@@ -3,7 +3,7 @@ name: Deploy to Cloudflare Worker
 on:
   push:
     branches:
-      - main  # Trigger on push to the main branch
+      - main  # Make sure this is set to the branch you're pushing to
 
 jobs:
   deploy:
@@ -16,11 +16,7 @@ jobs:
         run: |
           npm install -g wrangler
 
-      - name: Configure Wrangler with Cloudflare API Key
-        run: |
-          echo ${{ secrets.CLOUDFLARE_API_KEY }} > ~/.wrangler/config.toml
-
       - name: Deploy to Cloudflare Worker
         run: |
           wrangler login --api-key ${{ secrets.CLOUDFLARE_API_KEY }}
-          wrangler publish --env production
+          wrangler publish
