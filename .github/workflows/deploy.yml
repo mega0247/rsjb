@@ -18,10 +18,13 @@ jobs:
           node-version: '14'  # Adjust if needed
 
       - name: Install Wrangler CLI
-        run: npm install -g wrangler
+        run: |
+          npm install -g wrangler
 
       - name: Configure Wrangler with Cloudflare API Key
-        run: echo ${{ secrets.CLOUDFLARE_API_KEY }} > ~/.wrangler/config.toml
+        run: |
+          echo ${{ secrets.CLOUDFLARE_API_KEY }} > ~/.wrangler/config.toml
 
       - name: Deploy to Cloudflare Worker
-        run: wrangler publish --env production
+        run: |
+          wrangler publish --env production
