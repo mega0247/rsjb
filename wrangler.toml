@@ -1,18 +1,9 @@
-name = "redirect-worker"  # Change this to your worker's name
-main = "worker.js"        # Update this based on your entry script
-compatibility_date = "2025-03-17"
-
-# Optional: Define your environment variables here
-[vars]
-ENVIRONMENT = "production"
-
-# Optional: If you are using KV storage, durable objects, etc.
-# [[kv_namespaces]]
-# binding = "MY_NAMESPACE"
-# id = "your-kv-namespace-id"
-
-# Optional: If your worker is associated with a specific Cloudflare account
+name = "redirect-worker"
 account_id = "your-cloudflare-account-id"
+workers_dev = true
+compatibility_date = "2025-03-17"
+main = "src/worker.js"  # Specify the correct path to the worker script
 
-# Optional: If deploying to a specific zone
-# zone_id = "your-zone-id"
+# Uncomment and set if deploying to a specific route
+# route = "yourdomain.com/*"
+# zone_id = "your-cloudflare-zone-id"
