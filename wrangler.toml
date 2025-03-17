@@ -1,5 +1,18 @@
-name = "redirect-worker"
-account_id = "your-cloudflare-account-id"
-workers_dev = true
+name = "redirect-worker"  # Change this to your worker's name
+main = "worker.js"        # Update this based on your entry script
 compatibility_date = "2025-03-17"
-main = "worker.js"  # Make sure this file exists in your project root
+
+# Optional: Define your environment variables here
+[vars]
+ENVIRONMENT = "production"
+
+# Optional: If you are using KV storage, durable objects, etc.
+# [[kv_namespaces]]
+# binding = "MY_NAMESPACE"
+# id = "your-kv-namespace-id"
+
+# Optional: If your worker is associated with a specific Cloudflare account
+account_id = "your-cloudflare-account-id"
+
+# Optional: If deploying to a specific zone
+# zone_id = "your-zone-id"
